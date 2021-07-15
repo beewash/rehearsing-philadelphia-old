@@ -11,4 +11,5 @@ export const sanity = SanityClient({
   useCdn: true,
 });
 
+
 export const imageUrlBuilder = ImageUrlBuilder(sanity);
