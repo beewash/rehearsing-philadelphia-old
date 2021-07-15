@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Switch, Link } from 'react-router-dom' ;
+import { BrowserRouter, Route, Switch } from 'react-router-dom' ;
 // import logo from './logo.svg';
 import styles from './styles/App.module.css';
 import NavBar from './components/NavBar';
