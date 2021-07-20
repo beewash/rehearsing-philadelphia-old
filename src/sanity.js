@@ -8,7 +8,7 @@ export const sanity = SanityClient({
   // this option enables faster responses
   // but can return stale data at times.
   // recommended for client-side queries
-  useCdn: true,
+  useCdn: false,
 });
 
 

@@ -36,7 +36,8 @@ const performances = {
             title: 'Credits',
             name: 'credits',
             type: 'array',
-            of: [{ type: 'peopleObject' }]
+            of: [{ type: 'reference',
+                    to: [{ type: 'people' }] }]
         },
     ]
 };

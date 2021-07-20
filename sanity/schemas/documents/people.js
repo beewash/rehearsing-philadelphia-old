@@ -8,9 +8,17 @@ const people = {
     preview: {
         select: {
           title: 'personName',
-          media: 'headshot'
+          media: 'headshot',
+          subtitle: 'title'
+        },
+        prepare ({title, media, subtitle}) {
+          return {
+            title,
+            media,
+            subtitle
+          }
         }
-      },
+    },
     fields: [
         {
             title: 'Name',
@@ -70,10 +78,8 @@ const people = {
             name: 'tags',
             description: 'Add all appropriate performance types.',
             type: 'array',
-            of: [{ type: 'performanceTypeObject' }],
-            options: {
-                layout: 'tags'
-            }
+            of: [{ type: 'reference',
+                    to: [{ type: 'performanceCat' }] }],
         },
         {
             title: 'List of Performances',

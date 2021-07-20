@@ -1,0 +1,11 @@
+const column = {
+    name: 'column',
+    title: 'Column',
+    type: 'object',
+    fields: [
+        { name: 'title', title: 'Title', type: 'string' },
+        { name: 'body', title: 'Body', type: 'richText' }
+    ]
+};
+
+export default column;

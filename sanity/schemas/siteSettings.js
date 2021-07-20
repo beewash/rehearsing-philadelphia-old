@@ -39,7 +39,7 @@ const siteSettings = {
             name: 'frontpage',
             type: 'reference',
             description: 'Choose page to be the frontpage',
-            to: { type: 'people' }, // change for actual homepage
+            to: { type: 'page' },
         },
         {
             title: 'Main navigation',

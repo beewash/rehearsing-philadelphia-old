@@ -7,7 +7,8 @@ import { BrowserRouter } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
 // import { persistQueryClient } from 'react-query/persistQueryClient-experimental';
 // import { createLocalStoragePersistor } from 'react-query/createLocalStoragePersistor-experimental';
-import App from './App';
+// import App from './App';
+import Layout from './components/layout';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
@@ -31,7 +32,7 @@ ReactDOM.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        <App />
+        <Layout />
       </BrowserRouter>
     </QueryClientProvider>
   </React.StrictMode>,

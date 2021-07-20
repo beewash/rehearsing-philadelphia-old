@@ -1,13 +1,17 @@
 {
     "cSpell.words": [
+        "@tailwind",
         "Headshot",
         "Persistor",
         "fieldsets",
         "frontpage",
+        "groq",
+        "headernav",
         "hotspot",
+        "noreferrer",
         "rehearsingphiladelphia",
+        "serializers",
         "tailwind",
-        "@tailwind",
         "webfonts"
     ]
 }

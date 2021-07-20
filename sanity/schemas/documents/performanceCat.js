@@ -9,8 +9,14 @@ const performanceCat = {
         select: {
           title: 'category',
           media: 'performanceIcon'
+        },
+        prepare ({title, media}) {
+          return {
+            title,
+            media
+          }
         }
-      },
+    },
     fields: [
         {
             name: 'category',

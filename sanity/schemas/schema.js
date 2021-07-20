@@ -10,6 +10,7 @@ import eventInformation from './eventInformation';
 
 // All documents here
 import navigation from './documents/navigation';
+import page from './documents/page';
 import home from './documents/home';
 import map from './documents/map';
 import people from './documents/people';
@@ -22,6 +23,11 @@ import sponsors from './documents/sponsors';
 // All objects here 
 import navItem from './objects/navItem';
 import navLink from './objects/navLink';
+import pageBuilder from './objects/pageBuilder';
+import pageBuilderContent from './objects/pageBuilderContent';
+import pageBuilderColumns from './objects/pageBuilderColumns';
+import bodyPortableText from './objects/bodyPortableText';
+import column from './objects/column';
 import richText from './objects/richText';
 import imageFigure from './objects/imageFigure';
 import emailVal from './objects/emailVal';
@@ -45,6 +51,7 @@ export default createSchema({
     navigation,
     navItem,
     navLink,
+    page,
     home, 
     people,
     venues,
@@ -53,6 +60,11 @@ export default createSchema({
     map,
     legal,
     sponsors,
+    pageBuilder,
+    pageBuilderContent,
+    pageBuilderColumns,
+    bodyPortableText,
+    column,
     richText,
     imageFigure,
     emailVal,

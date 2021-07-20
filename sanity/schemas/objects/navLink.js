@@ -8,13 +8,18 @@ const navLink = {
             name: 'internalLink',
             description: 'Select pages for navigation',
             type: 'reference',
-            to: [{ type: 'people' }, { type: 'performanceCat' }]
+            to: [{ type: 'page' }]
         },
         {
             title: 'External Link',
             name: 'externalLink',
             description: 'Use fully qualified URLs for external link',
             type: 'link'
+        },
+        {
+            title: 'External Link switch',
+            name: 'externalContent',
+            type: 'boolean'
         }
     ]
 };

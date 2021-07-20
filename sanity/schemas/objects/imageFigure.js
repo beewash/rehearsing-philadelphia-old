@@ -12,6 +12,19 @@ const imageFigure = {
             title: 'Alternative Text'
         }
     ],
+    preview: {
+      select: {
+        title: 'title',
+        media: 'imageFigure'
+      },
+      prepare ({title, media}) {
+        return {
+          title,
+          media,
+          subtitle: 'Content'
+        }
+      }
+    }
 };
 
 export default imageFigure;

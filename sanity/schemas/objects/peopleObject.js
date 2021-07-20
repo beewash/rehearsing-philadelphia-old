@@ -15,7 +15,21 @@ const peopleObject = {
             type: 'reference',
             to: [{ type: 'people' }]
         }
-    ]
+    ],
+    preview: {
+        select: {
+          title: 'personName',
+          media: 'imageFigure',
+          subtitle: 'title'
+        },
+        prepare ({title, media, subtitle}) {
+          return {
+            title,
+            media,
+            subtitle
+          }
+        }
+    }
 };
 
 export default peopleObject;

@@ -37,7 +37,8 @@ const venues = {
             name:'peopleList',
             title: 'List of performers',
             type: 'array',
-            of: [{ type: 'peopleObject' }]
+            of: [{ type: 'reference',
+                    to: [{ type: 'people' }] }]
         }
 
     ]
