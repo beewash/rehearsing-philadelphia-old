@@ -1,37 +1,46 @@
-import React from 'react';
-//import sanity from '../sanity';
+import React, { useState, useEffect } from 'react';
+import { sanity } from '../sanity';
 import Layout from '../components/layout';
-import PageBuilder from '../components/pageBuilder';
+//import PageBuilder from '../components/pageBuilder';
 
-export const query =`
-*[_type == "page"]{
-  pageBuilder[]{
-    _key, 
-    _type,
-    title,
-    image{
-    	alt, 
-    	asset{
-    		_ref
-  		}
-  	}
-  }
-}
-`
+export default function PageTemplate() {
+  //const {data} = props
+  //const page = data && data.page
+  //const {pageBuilder, _rawPageBuilder} = page
+  const [pageData, setPage] = useState(null);
 
-const PageTemplate = props => {
-  const {data} = props
-  const page = data && data.page
-  const {pageBuilder, _rawPageBuilder} = page
+  useEffect(() => {
+      sanity.fetch(`
+      *[_type == "page"]{
+        title,
+        pageBuilder[]{
+          _key, 
+          _type,
+          title,
+          image{
+            alt, 
+            asset{
+              _ref
+            }
+          }
+        }
+      }
+      `)
+      .then((data) => setPage(data))
+      .catch(console.error);
+  }, []);
 
   return (
     <Layout>
-      <PageBuilder pageBuilder={pageBuilder} _rawPageBuilder={_rawPageBuilder} />
+      {/* <PageBuilder pageBuilder={pageBuilder} _rawPageBuilder={_rawPageBuilder} /> */}
+      {pageData && pageData.map((page, index) => (
+      <div>{page.title}</div>
+      ))}
     </Layout>
   )
-}
+};
 
-export default PageTemplate
+//export default PageTemplate
 
 
 // export default function Page() {

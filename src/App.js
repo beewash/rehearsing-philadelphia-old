@@ -1,25 +1,37 @@
-import { BrowserRouter, Route, Switch } from 'react-router-dom' ;
-// import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
+import { Route, Switch } from 'react-router-dom' ;
+import { sanity } from './sanity';
 import styles from './styles/App.module.css';
-import NavBar from './components/NavBar';
-import Home from './components/Home';
 import NotFound from './components/NotFound';
-import schedule from './components/Schedule';
+import PageTemplate from './templates/page';
 
 function App() {
+  const [routeData, setRoute] = useState(null);
+
+  useEffect(() => {
+      sanity.fetch(`
+      *[_type == "page"]{
+        _id,
+        slug{
+          current
+        }
+      }
+      `)
+      .then((data) => setRoute(data))
+      .catch(console.error);
+  }, []);
+
   return (
     <>
-      <main className={styles.main}>
-        <div className={styles.container}>
-          <BrowserRouter>
-          <NavBar />
+      <main id="app-main" className={styles.main}>
+      {routeData && routeData.map((route, index) => (
+        <div id="app-div" className={styles.container}>
             <Switch>
-              <Route component={Home} path="/" exact />
-              <Route component={schedule} path="/schedule" />
+              <Route component={PageTemplate} key={route._id} path={"/" + route.slug.current} />
               <Route component={NotFound} />
             </Switch>
-          </BrowserRouter>
         </div>
+      ))}
       </main>
     </>
   );

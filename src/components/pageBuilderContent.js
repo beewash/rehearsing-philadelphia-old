@@ -1,5 +1,5 @@
 import React, { Image, useEffect, useState } from 'react';
-import sanity from '../sanity';
+import { sanity } from '../sanity';
 import PortableText from './portableText';
 
 const PageBuilderContent = ({block, raw}) => {

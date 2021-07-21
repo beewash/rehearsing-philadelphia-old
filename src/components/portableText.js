@@ -1,5 +1,5 @@
 import React from 'react';
-import sanity from '../sanity';
+import { sanity } from '../sanity';
 import BasePortableText from '@sanity/block-content-to-react';
 import serializers from './serializers';
 

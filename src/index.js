@@ -7,11 +7,11 @@ import { BrowserRouter } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
 // import { persistQueryClient } from 'react-query/persistQueryClient-experimental';
 // import { createLocalStoragePersistor } from 'react-query/createLocalStoragePersistor-experimental';
-// import App from './App';
 import Layout from './components/layout';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
+import App from './App';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -32,7 +32,9 @@ ReactDOM.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        <Layout />
+        <Layout>
+          <App />
+        </Layout>
       </BrowserRouter>
     </QueryClientProvider>
   </React.StrictMode>,

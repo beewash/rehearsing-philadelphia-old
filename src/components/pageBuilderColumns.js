@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PortableText from './portableText';
-import sanity from '../sanity';
+import { sanity } from '../sanity';
 
 const PageBuilderColumns = ({block, raw}) => {
   //const {columns} = block;
